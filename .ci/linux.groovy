@@ -4,7 +4,7 @@ def buildLinux(config, String configuration, String key) {
 	def linux_configure_standard_args = '--my-rs485-serial-port=/dev/ttyS0 --my-controller-ip-address=1.2.3.4 '+
 		'--my-mqtt-subscribe-topic-prefix=dummy --my-mqtt-publish-topic-prefix==dummy --my-mqtt-client-id=0 '
 	def linux_builder                 = 'make '
-	def linux_builder_standard_args   = '-j1'
+	def linux_builder_standard_args   = '-j8'
 	def linux_build_cmd               = linux_builder + linux_builder_standard_args
 	def linux_configure_cmd           = linux_configurer + linux_configure_standard_args + configuration
 	sh """#!/bin/bash
