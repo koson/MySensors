@@ -37,10 +37,17 @@
 
 #include <MySensors.h>
 
+
 #define CHILD_ID_LIGHT 0
 #define LIGHT_SENSOR_ANALOG_PIN 0
 
-uint32_t SLEEP_TIME = 30000; // Sleep time between reads (in milliseconds)
+
+#define MY_RF24_PA_LEVEL RF24_PA_LOW
+#define MY_DEFAULT_ERR_LED_PIN 4  // Error led pin
+#define MY_DEFAULT_RX_LED_PIN  6  // Receive led pin
+#define MY_DEFAULT_TX_LED_PIN  5  // the PCB, on board LED
+
+uint32_t SLEEP_TIME = 3000; // Sleep time between reads (in milliseconds)
 
 MyMessage msg(CHILD_ID_LIGHT, V_LIGHT_LEVEL);
 int lastLightLevel;

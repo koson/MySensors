@@ -1,8 +1,8 @@
 {
-    "port": "COM17",
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328old",
+    "port": "COM18",
     "output": "./build",
     "programmer": "ArduinoISP",
-    "sketch": "GatewaySerial.ino"
+    "sketch": "LightSensor.ino"
 }

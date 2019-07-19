@@ -100,6 +100,5 @@ void presentation()
 
 void loop()
 {
-	Serial.print("Battery Voltage: ");
 	// Send locally attached sensor data here
 }
