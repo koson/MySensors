@@ -1,0 +1,7 @@
+{
+    "port": "COM17",
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328old",
+    "programmer": "ArduinoISP",
+    "sketch": "GatewaySerial.ino"
+}
