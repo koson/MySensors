@@ -37,7 +37,7 @@
 */
 
 // Enable debug prints to serial monitor
-#define MY_DEBUG
+// #define MY_DEBUG
 
 
 // Enable and select radio type attached
@@ -101,4 +101,14 @@ void presentation()
 void loop()
 {
 	// Send locally attached sensor data here
+}
+void receive(const MyMessage &message)
+{
+	Serial.print("Got from : ");
+	Serial.print( message.sender);
+	// Serial.print("message type : ");
+	// Serial.println(message.type);
+	Serial.print(" payload : ");
+	Serial.println(message.getInt());
+
 }
