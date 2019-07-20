@@ -104,11 +104,11 @@ void loop()
 }
 void receive(const MyMessage &message)
 {
-	Serial.print("Got from : ");
-	Serial.print( message.sender);
-	// Serial.print("message type : ");
-	// Serial.println(message.type);
-	Serial.print(" payload : ");
-	Serial.println(message.getInt());
+	// Serial.print("Got from : ");
+	// Serial.print( message.sender);
+	// // Serial.print("message type : ");
+	// // Serial.println(message.type);
+	// Serial.print(" payload : ");
+	// Serial.println(message.getInt());
 
 }

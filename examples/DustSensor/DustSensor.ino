@@ -41,6 +41,8 @@
 // Enable debug prints
 #define MY_DEBUG
 
+#define MY_NODE_ID 33
+
 // Enable and select radio type attached
 #define MY_RADIO_RF24
 //#define MY_RADIO_NRF5_ESB
@@ -52,7 +54,7 @@
 #define CHILD_ID_DUST 0
 #define DUST_SENSOR_ANALOG_PIN 1
 
-uint32_t SLEEP_TIME = 30*1000; // Sleep time between reads (in milliseconds)
+uint32_t SLEEP_TIME = 3*1000; // Sleep time between reads (in milliseconds)
 //VARIABLES
 int val = 0;           // variable to store the value coming from the sensor
 float valDUST =0.0;
