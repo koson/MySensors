@@ -28,7 +28,7 @@
 
 // Enable debug prints to serial monitor
 #define MY_DEBUG
-
+#define MY_NODE_ID 24
 // Enable and select radio type attached
 #define MY_RADIO_RF24
 //#define MY_RADIO_NRF5_ESB
@@ -47,7 +47,7 @@
 #define MY_DEFAULT_RX_LED_PIN  6  // Receive led pin
 #define MY_DEFAULT_TX_LED_PIN  5  // the PCB, on board LED
 
-uint32_t SLEEP_TIME = 3000; // Sleep time between reads (in milliseconds)
+uint32_t SLEEP_TIME = 1000; // Sleep time between reads (in milliseconds)
 
 MyMessage msg(CHILD_ID_LIGHT, V_LIGHT_LEVEL);
 int lastLightLevel;
@@ -65,7 +65,7 @@ void presentation()
 void loop()
 {
 	int16_t lightLevel = (1023-analogRead(LIGHT_SENSOR_ANALOG_PIN))/10.23;
-	Serial.println(lightLevel);
+	// Serial.println(lightLevel);
 	if (lightLevel != lastLightLevel) {
 		send(msg.set(lightLevel));
 		lastLightLevel = lightLevel;
