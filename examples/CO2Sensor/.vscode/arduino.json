@@ -1,8 +1,8 @@
 {
+    "port": "COM18",
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328old",
-    "port": "COM16",
     "output": "./build",
     "programmer": "ArduinoISP",
-    "sketch": "LightSensor.ino"
+    "sketch": "CO2Sensor.ino"
 }
