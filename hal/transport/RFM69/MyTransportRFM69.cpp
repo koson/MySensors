@@ -59,11 +59,7 @@ uint8_t transportGetAddress(void)
 
 bool transportSend(const uint8_t to, const void *data, uint8_t len, const bool noACK)
 {
-	if (noACK) {
-		(void)RFM69_sendWithRetry(to, data, len, 0, 0);
-		return true;
-	}
-	return RFM69_sendWithRetry(to, data, len);
+	return RFM69_sendWithRetry(to, data, len, noACK);
 }
 
 bool transportDataAvailable(void)
@@ -79,7 +75,7 @@ bool transportSanityCheck(void)
 
 uint8_t transportReceive(void *data)
 {
-	return RFM69_receive((uint8_t *)data, MAX_MESSAGE_LENGTH);
+	return RFM69_receive((uint8_t *)data, MAX_MESSAGE_SIZE);
 }
 
 void transportEncrypt(const char *key)
@@ -228,7 +224,7 @@ bool transportSanityCheck(void)
 uint8_t transportReceive(void *data)
 {
 	// save payload length
-	const uint8_t dataLen = _radio.DATALEN < MAX_MESSAGE_LENGTH? _radio.DATALEN : MAX_MESSAGE_LENGTH;
+	const uint8_t dataLen = _radio.DATALEN < MAX_MESSAGE_SIZE ? _radio.DATALEN : MAX_MESSAGE_SIZE;
 	(void)memcpy((void *)data, (void *)_radio.DATA, dataLen);
 	// Send ack back if this message wasn't a broadcast
 	if (_radio.ACKRequested()) {
